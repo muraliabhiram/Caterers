@@ -1,0 +1,35 @@
+
+                      
+            <div class="sidebar-title white-txt">
+                <h6>Your Menu</h6> <i class="fa fa-cutlery pull-right"></i>
+            </div>
+               
+
+            <div *ngFor="let category of SelectedMenu">
+            
+            <div class="order-row" style="background-color: linen; font-weight: bold;">
+                <div class="title-row" style="padding-left: 5px;" > {{category.CategoryName}}</div>                            
+             </div>
+             <div *ngFor="let foodItem of category.FoodItems">
+                <div class="order-row bg-white">
+                        <div class="title-row" style="padding-left: 10px;">
+                           {{foodItem.FoodItemName}}                                    
+                        </div>   
+                </div>               
+            </div>
+            </div>
+
+            <div class="widget-body" style="background-color:linen ;">
+                <div class="col-xs-4">
+                    QUANTITY (No of Plates) 
+                </div>
+                <div class="col-xs-4">
+                    <input class="form-control" [(ngModel)]="Quantity" (change)='QuantityChange()' id="quant-input"> 
+                </div>                           
+                <div class="price-wrap text-xs-center">
+                    <p>TOTAL</p>
+                    <h3 class="value"><strong>{{Total}}</strong></h3>                                <p>Free Shipping</p>
+                    <button onclick="location.href='checkout.html'" type="button" class="btn theme-btn btn-lg">Checkout</button>
+                </div>
+            </div>
+ 

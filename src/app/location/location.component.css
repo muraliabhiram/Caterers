@@ -1,0 +1,30 @@
+.location-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .form-control {
+    border: 1px solid #eaebeb;
+    border-radius: 2px;
+}
+.order-row .form-control {
+  border-radius: 0;
+}
+
+.form-control {
+  border: 1px solid #eaebeb;
+  border-radius: 2px;
+}
+
+.form-control-lg,
+.dropdown-menu,
+.btn,
+.btn-group-lg>.btn,
+.img-rounded {
+    border-radius: 2px
+}

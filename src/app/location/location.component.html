@@ -1,0 +1,11 @@
+<form class=".location-form">
+    <input type="text" class="form-control form-control-lg"
+           placeholder="Select City"
+           [formControl]="control"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete"  (optionSelected)="selectLocation($event.option.value)"s>
+      <mat-option *ngFor="let street of filteredStreets | async" [value]="street">
+        {{street}}
+      </mat-option>
+    </mat-autocomplete>
+  </form>

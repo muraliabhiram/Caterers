@@ -1,0 +1,49 @@
+              
+  <div *ngFor="let category of Categories">
+    <div class="menu-widget" id="{{category.CategoryId}}">
+        <div class="widget-heading" style="background-color: linen;"> 
+            <h3 class="widget-title text-dark">
+          {{category.CategoryName}} (Select Any {{category.MaxCount}}) 
+          <a class="btn btn-link pull-right" data-toggle="collapse" href="#popular{{category.CategoryId}}" aria-expanded="true">
+          <i class="fa fa-angle-right pull-right"></i>
+          <i class="fa fa-angle-down pull-right"></i>
+          </a>
+       </h3>
+            <div class="clearfix"></div>
+        </div>
+        <div class="collapse in show" id="popular{{category.CategoryId}}">
+            <div *ngFor="let foodItem of category.FoodItems">
+            <div class="food-item">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-lg-8">
+                        <div class="rest-logo pull-left">
+                            <a class="restaurant-logo pull-left" href="#"><img src="http://placehold.it/100x80" alt="Food logo"></a>
+                        </div>
+                        <!-- end:Logo -->
+                        <div class="rest-descr">
+                            <h6><a href="#">{{foodItem.FoodItemName }}</a></h6>
+                            <p> {{foodItem.FoodItemDesc}}</p>
+                        </div>
+                        <!-- end:Description -->
+                    </div>
+                    <!-- end:col -->
+                    <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info" 
+                    *ngIf="!foodItem.IsAdded" >    
+                     <a href="#" (click)='addToYourMenu(category,foodItem)' class="btn btn-small btn btn-secondary pull-right" data-toggle="modal" data-target="#order-modal">&#43;</a> 
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info" 
+                    *ngIf="foodItem.IsAdded" >    
+                     <a href="#" (click)='deleteFromYourMenu(category,foodItem)' class="btn btn-small btn btn-secondary pull-right fa fa-trash" data-toggle="modal" data-target="#order-modal"></a> 
+                    </div>
+
+                </div>
+                <!-- end:row -->
+            </div>
+        </div>
+        </div>
+            
+  </div>
+
+  
+  
