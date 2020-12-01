@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Caterers</string>
+    <string name="title_activity_main">Caterers</string>
+    <string name="package_name">com.caterers.app</string>
+    <string name="custom_url_scheme">com.caterers.app</string>
+</resources>
